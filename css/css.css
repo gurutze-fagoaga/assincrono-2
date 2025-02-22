@@ -3,12 +3,12 @@
     font-size: small;
     display: grid;
     grid-template-columns: 50px 100px 1fr 150px;
-    grid-template-rows: repeat(autofit, minmax(200px, 1fr));
-    grid-template-areas: 
-    "header header header header"
-    " . main main . " 
-    " . . sidebar . "
-    " . . footer . ";
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-areas:
+        "header header header header"
+        " . main main . "
+        " . . sidebar . "
+        " . . footer . ";
     grid-gap: 10px;
 }
 
@@ -23,7 +23,7 @@
 
 }
 
-.header__logo{
+.header__logo {
     height: 1em;
 }
 
@@ -48,36 +48,23 @@
 
 /* main */
 
-.main{
+.main {
     grid-area: main;
     display: grid;
     grid-template-columns: 200px 1fr;
-    grid-template-rows: repeat(4, minmax(200px, 1fr));
-    grid-template-areas: 
-    " main-1 main-1  " 
-    " . main-2  "
-    " . main-3  "
-    " video video " ;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 40%));
+    grid-template-areas:
+        " main-1 main-1  "
+        " . main-2  "
+        " . main-3  "
+        " video video";
     grid-gap: 10px;
-
+    justify-content: center;
 }
 
-/* secciones */
+/* sección 1 : Hero*/
 
-.section__paragraph{
-    font-size: 0.8rem;
-    margin-bottom: 1em;
-}
-
-.section__button{
-    width: 10em;
-    padding: 1em;
-    border: none;
-}
-
-/* sección 1 */
-
-.first-section {
+.hero {
     grid-area: main-1;
     display: flex;
     gap: 2em;
@@ -86,80 +73,145 @@
     width: 100%;
     object-fit: cover;
 }
-.first-section__text{
+
+.hero__text {
     width: 30%;
     display: flex;
     flex-direction: column;
     gap: 2em;
 }
 
-
-/* sección 2 */
-.second-section{
-    padding: 10em;
-    grid-area: main-2;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 20px;
+.hero__paragraph {
+    font-size: 0.8rem;
+    margin-bottom: 1em;
 }
 
-.section__h2{
-    grid-area: 1 / 1 / 2 / 3;
+.hero__button {
+    width: 10em;
+    padding: 1em;
+    border: none;
 }
 
-/* seccion 3*/
-
-.third-section{
-    grid-area: main-3;
-    display: grid;
-    grid-template-columns: 40% 30% 30%;
-    grid-template-rows: repeat(auto-fit, 200px);
-    justify-items: center;
-    align-items: center;
-}
-
-.section__article{
-    display: flex;
-    flex-direction: column;
-    padding: 4em;
-}
-
-.third-section__main-img{
-    grid-area: 1 / 1 / 3 / 2;
+.hero__img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.third-section__img{
+
+/* sección 2 : Info*/
+
+
+
+.info {
+    grid-area: main-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info__text {
+    margin-top: 1em;
+    display: flex;
+    gap: 4em;
+}
+
+.info__paragraph {
+    font-size: 0.8rem;
+    margin-bottom: 1em;
+}
+
+
+/* seccion 3 : works*/
+
+.works {
+    width: 80%;
+    grid-area: main-3;
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: repeat(2, 200px);
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1rem;
+}
+
+.works__article {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.works__main-img {
+    grid-area: 1 / 1 / 3 / 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.works__img {
     height: 100%;
     object-fit: cover;
     padding: 20px;
 }
 
-/* video */
-
-.video{
-    grid-area: video;
+.works__paragraph {
+    font-size: 0.8rem;
+    margin-bottom: 1em;
 }
 
+.works__button {
+    width: 10em;
+    padding: 1em;
+    border: none;
+}
+
+/* video */
+
+.video {
+    margin-top: 10em;
+    object-fit: fill;
+    grid-area: video;
+    display: flex;
+    flex-direction: column;
+
+}
 
 
 /* sidebar */
-.sidebar{
+.sidebar {
+    margin-top: 5em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
     grid-area: sidebar;
 }
 
-.sidebar__gallery{
-    height: 300px;
+.sidebar__text {
+    padding: 2em;
+    width: 100%;
     display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 4em;
+}
+
+.sidebar__gallery {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
 }
 
-/* footer */
-.footer{
-    grid-area: footer;
+.sidebar__paragraph {
+    font-size: 0.8rem;
+    margin-bottom: 1em;
 }
 
+/* footer */
+.footer {
+    grid-area: footer;
+}
 
